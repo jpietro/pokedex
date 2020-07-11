@@ -1,11 +1,30 @@
 <template>
     <div class="container">
         <h1>Pokedex</h1>
+        <PokemonList 
+      :imageUrl="imageUrl" 
+      :apiUrl="apiUrl" />
     </div>
 </template>
 
 <script>
+import PokemonSearch from './PokemonSearch.vue';
+import PokemonList from './PokemonList.vue';
+import PokemonDetail from './PokemonDetail.vue';
+
 export default {
+    data: () => {
+        return {
+            imageUrl: 'https://pokeres.bastionbot.org/images/pokemon/', 
+            apiUrl: 'https://pokeapi.co/api/v2/pokemon/'
+        }
+    },
+    components: {
+      PokemonSearch,
+      PokemonList,
+      PokemonDetail
+    },
+
 }
 </script>
 
